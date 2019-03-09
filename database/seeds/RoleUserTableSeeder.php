@@ -13,6 +13,10 @@ class RoleUserTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //find user with id 1 (admin)
+        $user=app\User::find(1);
+        // sync with roles
+        $user->roles()->sync([1,2,3]);
+
     }
 }

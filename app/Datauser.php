@@ -8,6 +8,11 @@ class Datauser extends Model
 {
     //
     protected $fillable=[
-        'nama', 'nim'
+        'name', 'identitas', 'user_id'
     ];
+
+    public function user(){
+        return $this->belongsTo("App\User");
+    }
+
 }
