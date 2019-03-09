@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDatausersTable extends Migration
+class CreateRoomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateDatausersTable extends Migration
      */
     public function up()
     {
-        Schema::create('datausers', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
-            $table->string('nomor_identitas')->unique()->nullable();
+            $table->string('name');
+
             // $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDatausersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datausers');
+        Schema::dropIfExists('rooms');
     }
 }
