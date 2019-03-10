@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('main_page');
+    return view('landing');
 });
 
 // register set to false.
