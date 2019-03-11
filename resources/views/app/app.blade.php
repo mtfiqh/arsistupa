@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     @yield('additional-css')
 
 </head>
@@ -28,7 +29,7 @@
     <div id="app">
         @yield('content')
     </div>
-
+    @include('app.footer')
     {{-- set default js --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- place for extra js --}}
