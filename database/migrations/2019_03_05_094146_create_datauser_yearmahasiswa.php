@@ -19,8 +19,8 @@ class CreateDatauserYearmahasiswa extends Migration
             $table->unsignedBigInteger('yearmahasiswa_id');
 
             // foreign
-            $table->foreign('datauser_id')->references('id')->on('datausers');
-            $table->foreign('yearmahasiswa_id')->references('id')->on('yearmahasiswas');
+            $table->foreign('datauser_id')->references('id')->on('datausers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('yearmahasiswa_id')->references('id')->on('yearmahasiswas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

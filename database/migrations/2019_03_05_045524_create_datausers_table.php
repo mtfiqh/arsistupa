@@ -15,9 +15,12 @@ class CreateDatausersTable extends Migration
     {
         Schema::create('datausers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
-            $table->string('nomor_identitas')->unique()->nullable();
-            // $table->timestamps();
+            $table->string('name');
+            $table->string('identitas')->unique()->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

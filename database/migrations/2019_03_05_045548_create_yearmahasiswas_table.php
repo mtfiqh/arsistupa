@@ -16,7 +16,7 @@ class CreateYearmahasiswasTable extends Migration
         Schema::create('yearmahasiswas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->year('tahun_ajaran');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

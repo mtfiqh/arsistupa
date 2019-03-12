@@ -15,7 +15,11 @@ class CreateDatauserRoomPivot extends Migration
     {
         Schema::create('datauser_room', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->unsignedBigInteger('datauser_id');
+            $table->unsignedBigInteger('room_id');
+
+            $table->foreign('datauser_id')->references('id')->on('datausers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('room_id')->references('id')->on('rooms')->onUpdate('cascade')->onDelete('cascade');
 
             // $table->timestamps();
         });
