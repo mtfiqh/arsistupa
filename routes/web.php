@@ -17,5 +17,5 @@ Route::get('/', function () {
 
 // register set to false.
 Auth::routes(['register'=>false]);
-Route::view('/dashboard' , 'user.dashboard');
+
 Route::get('/home', 'HomeController@index')->name('home');
